@@ -12,11 +12,17 @@
                 @if(get_sub_field('hide') != 1)
                 <?php
                 $selected = $i == 0 ? 'selected' : '';
+                $scrollReveal = $i == 0 ? 'scroll-reveal reveal-center' : '';
                 $i++; ?>
-    			<li class="{{ $selected }}" style="background-color: {{ the_sub_field('color') }}">
-    				<div class="cd-full-width">
-    					<h2>{{ the_sub_field('title') }}</h2>
-    					<p>{{ the_sub_field('description') }}</p>
+    			<li class="{{ $selected }}"
+				style="background: linear-gradient( 0deg, {{ the_sub_field('secondary_color') }}, {{ the_sub_field('color') }});"
+				>
+    				<div class="cd-full-width {{ $scrollReveal }}">
+						<div class="text-wrapper">
+	    					<h2>{{ the_sub_field('title') }}</h2>
+	    					{{ the_sub_field('description') }}
+						</div>
+						<div class="slide-bg-title">{{ the_sub_field('title') }}</div>
     				</div> <!-- .cd-full-width -->
     			</li>
                 @endif
@@ -41,7 +47,7 @@
                         $selected = $i == 0 ? 'selected' : '';
                         $i++;
                         ?>
-    					<li class="{{ $selected }}">
+    					<li class="scroll-reveal reveal-bottom {{ $selected }}">
                             <a style="background-image: url({{ the_sub_field('icon') }})"href="#0"><div>{{ the_sub_field('title') }}</div></a>
                         </li>
                         @endif

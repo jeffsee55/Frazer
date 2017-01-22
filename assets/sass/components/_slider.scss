@@ -38,7 +38,7 @@ Slider
 		height: $intro-height-S;
 		overflow: hidden;
 
-		li {
+		& > li {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -81,7 +81,7 @@ Slider
 
 	.cd-hero-slider {
 
-		li {
+		& > li {
 			background-position: center center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -102,6 +102,28 @@ Slider
 			/* Force Hardware Acceleration in WebKit */
 			@include backface-visibility(hidden);
 			@include transform(translateZ(0));
+
+			.slide-bg-title {
+				display: none;
+			}
+
+			@include MQ(M) {
+				.slide-bg-title {
+					position: absolute;
+					display: block;
+					top: 130px;
+					right: 300px;
+					font-size: 260px;
+					font-weight: bold;
+					text-transform: uppercase;
+					max-width: 400px;
+					line-height: 0.8;
+					letter-spacing: -2px;
+					font-family: 'Roboto Condensed';
+					text-align: right;
+					color: transparentize(white, .95);
+				}
+			}
 		}
 
 	    h2 {
@@ -120,7 +142,12 @@ Slider
 			margin: 0 auto 14px;
 		}
 
-		h2, p {
+		ul {
+			line-height: 1.2;
+			margin: 0 auto 14px;
+		}
+
+		.text-wrapper {
 			text-shadow: 0 1px 3px rgba(#000, .1);
 			color: white;
 			width: 90%;
@@ -145,7 +172,7 @@ Slider
 				display: block;
 			}
 
-			h2, p {
+			.text-wrapper {
 				max-width: 720px;
 			}
 
@@ -163,6 +190,7 @@ Slider
 
 			.cd-full-width h2,
 			.cd-full-width p,
+			.cd-full-width ul li,
 			.cd-full-width .cd-btn {
 				opacity: 0;
 				@include transform(translateX(100px));
@@ -170,6 +198,7 @@ Slider
 
 			.move-left .cd-full-width h2,
 			.move-left .cd-full-width p,
+			.move-left .cd-full-width ul li,
 			.move-left .cd-full-width .cd-btn {
 				opacity: 0;
 				@include transform(translateX(-100px));
@@ -177,6 +206,7 @@ Slider
 
 			.selected .cd-full-width h2,
 			.selected .cd-full-width p,
+			.selected .cd-full-width ul li,
 			.selected .cd-full-width .cd-btn {
 				/* this is the visible slide */
 				opacity: 1;
@@ -185,6 +215,7 @@ Slider
 
 			li.is-moving .cd-full-width h2,
 			li.is-moving .cd-full-width p,
+			li.is-moving .cd-full-width ul li,
 			li.is-moving .cd-full-width .cd-btn {
 				/* this is the slide moving outside the viewport
 				wait for the end of the transition on the li parent before set opacity to 0 and translate to 100px/-100px */
@@ -196,6 +227,10 @@ Slider
 			}
 
 			li.selected p {
+				@include transition(opacity .4s .3s, transform .5s .3s);
+			}
+
+			li.selected li {
 				@include transition(opacity .4s .3s, transform .5s .3s);
 			}
 
@@ -218,6 +253,7 @@ Slider
 		text-align: center;
 		height: 100px;
 		background-color: white;
+		overflow-x: scroll;
 
 		nav, ul, li, a {
 			height: 100%;
@@ -225,59 +261,62 @@ Slider
 
 		nav {
 			display: inline-block;
+			overflow-x: scroll;
 			position: relative;
 		}
 
-		.cd-marker {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: 100%;
-			@include transition(transform .2s, box-shadow .2s);
+		@include MQ(M) {
+			.cd-marker {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 100%;
+				@include transition(transform .2s, box-shadow .2s);
 
-            .triangle {
-                width: 0;
-                height: 0;
-                border-bottom: 20px solid white;
-                border-left: 40px solid transparent;
-                border-right: 40px solid transparent;
-                position: absolute;
-                top: -20px;
-                left: 50%;
-                right: 0;
-                bottom: 0;
-				@include transform(translateX(-50%));
-            }
+	            .triangle {
+	                width: 0;
+	                height: 0;
+	                border-bottom: 20px solid white;
+	                border-left: 40px solid transparent;
+	                border-right: 40px solid transparent;
+	                position: absolute;
+	                top: -20px;
+	                left: 50%;
+	                right: 0;
+	                bottom: 0;
+					@include transform(translateX(-50%));
+	            }
 
-			&.item-2 {
-				@include transform(translateX(100%));
-			}
+				&.item-2 {
+					@include transform(translateX(100%));
+				}
 
-			&.item-3 {
-				@include transform(translateX(200%));
-			}
+				&.item-3 {
+					@include transform(translateX(200%));
+				}
 
-			&.item-4 {
-				@include transform(translateX(300%));
-			}
+				&.item-4 {
+					@include transform(translateX(300%));
+				}
 
-			&.item-5 {
-				@include transform(translateX(400%));
-			}
+				&.item-5 {
+					@include transform(translateX(400%));
+				}
 
-			&.item-6 {
-				@include transform(translateX(500%));
+				&.item-6 {
+					@include transform(translateX(500%));
+				}
 			}
 		}
 
 		ul {
 			@include clearfix;
 			background: white;
+			white-space: nowrap;
 		}
 
 		li {
 			display: inline-block;
-			float: left;
 		}
 
 		a {

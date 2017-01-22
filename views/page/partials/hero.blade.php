@@ -5,7 +5,7 @@
         <section class="section message">
         	<article class="level columns message-{{ $side }}">
         		<div class="column message-label is-{{ get_sub_field('header_width') }}">
-                    <img class="reveal-right reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                    <img class="scroll-reveal reveal-right reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
         		</div>
         		<div class="column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
         			<div class="text-wrapper">

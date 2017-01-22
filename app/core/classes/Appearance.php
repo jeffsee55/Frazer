@@ -52,11 +52,14 @@ class Appearance {
 
 		} else {
 
+			// wp_enqueue_script( 'theme_scripts', CLASSY_THEME_DIR . 'dist/js/all.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
+
 			wp_enqueue_script( 'theme_scripts', CLASSY_THEME_DIR . 'assets/js/scripts.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
 			wp_enqueue_script( 'header_script', CLASSY_THEME_DIR . 'assets/js/header.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
 			wp_enqueue_script( 'modal_script', CLASSY_THEME_DIR . 'assets/js/modal.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
 			wp_enqueue_script( 'list_panel_script', CLASSY_THEME_DIR . 'assets/js/list-panel.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
 			wp_enqueue_script( 'slider_script', CLASSY_THEME_DIR . 'assets/js/slider.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
+			wp_enqueue_script( 'scrollreveal_script', CLASSY_THEME_DIR . 'assets/js/scrollreveal.js', array( 'jquery' ), CLASSY_THEME_VERSION, true );
 
 			$options = array(
 				'base_url'          => home_url( '' ),
