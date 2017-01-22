@@ -1,0 +1,160 @@
+body {
+    font-family: $family-monospace;
+    font-size: $size-5;
+    color: $grey-dark;
+
+    // bulma doesn't drill down for its tag class
+    // so the body for tag archives gets this class added
+    &.tag {
+        height: initial;
+        align-items: initial;
+        background-color: initial;
+        border-radius: initial;
+        color: initial;
+        display: initial;
+        font-size: initial;
+        justify-content: initial;
+        line-height: initial;
+        padding-left: initial;
+        padding-right: initial;
+        vertical-align: initial;
+        white-space: initial;
+    }
+}
+
+@include from($tablet) {
+    .admin-bar {
+        main {
+            padding-top: $nav-height;
+        }
+
+        header .nav {
+            top: 32px;
+        }
+    }
+}
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+img {
+	max-width: 100%;
+}
+
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+main {
+    margin: auto;
+    max-width: 1500px;
+    padding-top: $nav-height-mobile;
+
+    @include from($tablet) {
+        padding-top: $nav-height;
+    }
+}
+
+p {
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.content a:not(.button) {
+    border-bottom: none;
+}
+
+.section {
+    padding: 0;
+    max-width: 970px;
+}
+.text-wrapper .column {
+    padding: 0;
+}
+
+section.section {
+    margin: 4rem 0;
+    padding: 1rem;
+    @include from($tablet) {
+        margin: 4rem 2rem;
+    }
+    @include from($desktop) {
+        margin: 4rem auto;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $family-header;
+    font-weight: $header-font-weight;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    a {
+        font-family: $family-header;
+        color: $grey-dark;
+        font-weight: $header-font-weight;
+    }
+}
+
+h1 {
+    font-size: $size-1;
+}
+
+h2 {
+    font-size: $size-2;
+}
+
+h3 {
+    font-size: $size-3;
+}
+
+h4 {
+    font-size: $size-4;
+}
+
+h5 {
+    font-size: $size-5;
+}
+
+.title {
+    font-weight: $header-font-weight;
+    text-transform: uppercase;
+}
+
+.has-shadow {
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.31);
+}
+
+.button {
+    &.button-outline {
+        background: none;
+        border: 1px solid;
+
+        &.inverse {
+            border-color: white;
+            color: white;
+        }
+    }
+    &.button-block {
+        width: 100%;
+    }
+}
+
+.text-left {
+    figure {
+        order: 2
+    }
+}
+
+date {
+    text-decoration: none;
+    color: $grey-dark;
+    // font-family: $family-cursive;
+}
+
+.is-visible {
+    visibility: visible !important;
+}

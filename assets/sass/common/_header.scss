@@ -1,0 +1,113 @@
+header {
+    .nav {
+        background: #FFF;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    	/* Force Hardware Acceleration */
+    	transform: translateZ(0);
+    	will-change: transform;
+    	transition: transform .5s;
+        transition: transform .5s, -webkit-transform .5s;
+
+        .mobile-logo {
+            width: 170px;
+            position: absolute;
+            top: 1rem;
+
+            @include from($tablet) {
+                display: none;
+            }
+        }
+        .desktop-logo {
+            @include until($tablet) {
+                display: none;
+            }
+        }
+
+        .custom-logo-link {
+            max-width: 100px;
+            padding: 1rem 1.3rem;
+
+            @include until($tablet) {
+                max-width: 100px;
+                position: absolute;
+                padding: 1rem;
+            }
+
+            img {
+                max-height: 125px;
+                width: auto;
+            }
+        }
+
+        .nav-right {
+            flex-grow: 2;
+
+            .nav-item {
+                padding: 0 1rem;
+
+                @include from($tablet) {
+                    padding: 0 3rem;
+                }
+            }
+
+        }
+
+        .nav-center {
+            flex: 1;
+            justify-content: space-around;
+
+            aside.menu {
+                position: absolute;
+                visibility: hidden;
+                top: 100%;
+                background: white;
+
+                @include until($tablet) {
+                    left: 0;
+                    right: 0;
+                }
+
+                ul.menu-list {
+                    li {
+                        a {
+                            padding: 1rem 2rem;
+
+                        }
+                    }
+                }
+            }
+
+            .nav-item {
+                text-transform: uppercase;
+
+                @include until($tablet) {
+                    margin-top: 5rem;
+                    padding: 0.75rem 0.5rem 0.75rem;
+                    font-size: $size-6;
+                }
+            }
+        }
+
+
+    	&.hide {
+    		transform: translateY(-100%);
+    		-webkit-transform: translateY(-100%);
+    	}
+    }
+}
+
+.nav-right {
+    align-items: stretch;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}

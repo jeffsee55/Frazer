@@ -1,0 +1,92 @@
+.contact {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    left: 2rem;
+    background: white;
+    z-index: 1000;
+    display: none!important;
+
+    @include from($tablet) {
+        position: fixed;
+        right: 10rem;
+        left: 10rem;
+    }
+
+    &.show {
+        @include until($tablet) {
+            display: block !important;
+        }
+        @include from($tablet) {
+            display: flex !important;
+        }
+    }
+
+
+    .contact-form {
+        padding: 2rem 2rem 2.5rem;
+        p.control:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .contact-info {
+        padding: 2rem;
+        background: $dark-blue;
+        color: white;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > div {
+            margin-bottom: 1rem;
+        }
+
+        @include from($tablet) {
+            display: flex;
+        }
+
+        hr {
+            border-color: white;
+        }
+
+        a {
+            color: white;
+        }
+    }
+
+    .contact-submit {
+        height: 50px;
+        width: 50px;
+        padding: 0;
+        display: flex;
+        border-radius: 50%;
+        background: $dark-blue;
+        color: white;
+        float: right;
+        margin-top: 1rem;
+    }
+
+    .input, .textarea {
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid $grey-light;
+
+        @include from($tablet) {
+            width: 80%;
+            min-width: 250px;
+        }
+    }
+}
+
+body.show-contact {
+    &:after {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);;
+        z-index: 999;
+    }
+
+}

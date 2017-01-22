@@ -1,0 +1,19 @@
+.hero {
+    &.is-large {
+
+        .hero-body {
+            padding: 4rem 0;
+            h1 {
+                font-size: $size-1 * 1.3;
+                color: white;
+                letter-spacing: 10px;
+            }
+
+            @include from($tablet) {
+                h1 {
+                    font-size: $size-large;
+                }
+            }
+        }
+    }
+}

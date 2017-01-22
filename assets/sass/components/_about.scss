@@ -1,0 +1,31 @@
+.page-layout {
+
+    figure {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: none;
+        }
+    }
+
+    article.page {
+        padding: 3rem 2rem;
+        @include until($tablet) {
+            padding: 3rem 1rem;
+
+            p {
+                text-align: justify;
+            }
+        }
+
+        .title {
+            font-size: $size-2;
+        }
+    }
+}
+
+.contact-info.columns.is-gapless {
+    margin-top: 5rem;
+}
