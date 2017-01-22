@@ -5,7 +5,8 @@
         <section class="section message">
         	<article class="level columns message-{{ $side }}">
         		<div class="column message-label is-{{ get_sub_field('header_width') }}">
-                    <img class="scroll-reveal reveal-right reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                    <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
+                    <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
         		</div>
         		<div class="column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
         			<div class="text-wrapper">
@@ -18,13 +19,14 @@
     @if(get_row_layout() == 'block_text')
         <?php $side = get_sub_field('header_right') ? 'even' : 'odd'; ?>
         <section class="section message">
-        	<article class="level columns message-{{ $side }}">
+        	<article class="block-message level columns message-{{ $side }}">
         		<div class="column message-label is-{{ get_sub_field('header_width') }}">
                     <h1>{{ the_sub_field('header') }}</h1>
                     @if(! empty(get_sub_field('link')))
                         <a class="button" href="{{ the_sub_field('link') }}">{{ the_sub_field('link_text') }}</a>
                     @endif
         		</div>
+                <div class="seperator">test</div>
         		<div class="column block-message-text message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
         			<div class="text-wrapper">
                         {{ the_sub_field('body') }}
@@ -45,9 +47,11 @@
                     $i++; ?>
         			<li class="{{ $selected }}">
         				<div class="cd-full-width">
-                            <h3>{{ the_sub_field('item_header') }}</h3>
-                            <hr>
-                            {{ the_sub_field('body') }}
+            				<div class="text-wrapper">
+                                <h3>{{ the_sub_field('item_header') }}</h3>
+                                <hr>
+                                {{ the_sub_field('body') }}
+                            </div>
         				</div> <!-- .cd-full-width -->
         			</li>
                 @endwhile
@@ -100,3 +104,16 @@
     	</section>
     @endif
 @endwhile
+
+<div class="container">
+    <div class="columns">
+        @while(have_rows('grid'))
+        <?php the_row(); ?>
+            <div class="column is-4">
+                <h1>Title</h1>
+                <p>Address line 1</p>
+                <p>Address line 2</p>
+            </div>
+        @endwhile
+    </div>
+</div>

@@ -10,9 +10,12 @@ $prefix-for-opera: '-o-';
 $prefix-for-spec: '-webkit- ';
 
 // intro height
-$intro-height-S: 400px;
+$intro-height-S: 450px;
 $intro-height-M: 500px;
 $intro-height-L: 500px;
+
+$slider-nav-height: 80px;
+$slider-nav-width-vertical: 200px;
 
 
 /* --------------------------------
@@ -25,10 +28,18 @@ Slider
 	position: relative;
 	@include font-smoothing;
 
+	@include from($tablet) {
+		margin-bottom: 15rem;
+	}
+
 	&.vertical {
+		@include from($tablet) {
+			margin-bottom: 0rem;
+		}
+
 		.cd-hero-slider {
 			@include from($tablet) {
-				margin-left: 120px;
+				margin-left: $slider-nav-width-vertical;
 			}
 		}
 	}
@@ -251,17 +262,21 @@ Slider
 		bottom: 0;
 		z-index: 2;
 		text-align: center;
-		height: 100px;
+		height: $slider-nav-height;
 		background-color: white;
-		overflow-x: scroll;
+
+		@include until($tablet) {
+			overflow-x: scroll;
+			overflow-y: hidden;
+		}
 
 		nav, ul, li, a {
-			height: 100%;
+			// height: 100%;
 		}
 
 		nav {
 			display: inline-block;
-			overflow-x: scroll;
+			// overflow-x: scroll;
 			position: relative;
 		}
 
@@ -331,18 +346,19 @@ Slider
 			@include transition(background-color .2s);
 
 	    	@include until($tablet) {
-				height: 70px;
-			    width: 75px;
+				height: $slider-nav-height;
+				width: 75px;
 			    display: block;
 	            background-size: 60px;
 	            background-position: center 0.5rem;
 	        }
 
 
-	        div {
-	            height: 50px;
+	        div.slide-nav-title {
 	            display: flex;
 	            align-items: center;
+				padding-top: 110px;
+				white-space: pre-wrap;
 	        	@include until($tablet) {
 	                display: none;
 	            }
@@ -360,7 +376,6 @@ Slider
 
 
 		@include MQ(M) {
-			height: 180px;
 
 			.cd-marker,
 			li {
@@ -400,8 +415,9 @@ Slider
 	            left: 0;
 	            top: 0;
 	            bottom: 0;
-	            width: 120px;
+	            width: $slider-nav-width-vertical;
 	            height: $intro-height-L;
+				overflow-y: scroll;
 
 	        	.cd-marker {
 	                display: none;
@@ -415,15 +431,22 @@ Slider
 
 	                li
 	                {
-	                    height: auto;
+						@include until($tablet) {
+		                    height: $slider-nav-height;
+						}
 
 	                    a {
 	                        background-size: 44px;
 	                        font-size: 14px;
 
-	                        div {
-	                            padding-top: 70px;
-	                        }
+					        div.slide-nav-title {
+					            display: flex;
+					            align-items: center;
+								padding-top: 60px;
+					        	@include until($tablet) {
+					                display: none;
+					            }
+					        }
 	                    }
 	                }
 	            }

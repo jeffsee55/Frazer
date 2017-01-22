@@ -7,6 +7,13 @@ sr.reveal('.reveal-right', {
     rotate: { x: 0, y: 0, z: 60 },
 });
 
+sr.reveal('.reveal-left', {
+    origin: 'left',
+    distance: '150px',
+    duration: 1500,
+    rotate: { x: 0, y: 0, z: -60 },
+});
+
 sr.reveal('.reveal-center', {
     origin: 'bottom',
     distance: '0px',

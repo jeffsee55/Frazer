@@ -48,7 +48,9 @@
                         $i++;
                         ?>
     					<li class="scroll-reveal reveal-bottom {{ $selected }}">
-                            <a style="background-image: url({{ the_sub_field('icon') }})"href="#0"><div>{{ the_sub_field('title') }}</div></a>
+                            <a style="background-image: url({{ the_sub_field('icon') }})" href="#0">
+								<div class="slide-nav-title">{{ the_sub_field('title') }}</div>
+							</a>
                         </li>
                         @endif
                     @endwhile

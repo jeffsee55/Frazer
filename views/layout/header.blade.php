@@ -7,7 +7,9 @@
 						{{ get_custom_logo() }}
 					</div>
 					<div class="mobile-logo">
-						<img src="{{ wp_get_attachment_image_src(get_field('fff_mobile_logo', 'option'), 'large')[0] }}">
+						<a href="/">
+							<img src="{{ wp_get_attachment_image_src(get_field('fff_mobile_logo', 'option'), 'large')[0] }}">
+						</a>
 					</div>
 				</div>
 				<div class="nav-right">
@@ -48,7 +50,9 @@
 						{{ get_custom_logo() }}
 					</div>
 					<div class="mobile-logo">
-						<img src="{{ wp_get_attachment_image_src(get_field('fff_mobile_logo', 'option'), 'large')[0] }}">
+						<a href="/">
+							<img src="{{ wp_get_attachment_image_src(get_field('fff_mobile_logo', 'option'), 'large')[0] }}">
+						</a>
 					</div>
 					@if ($items = $menu->get_split_items())
 						@foreach ($items as $item)
