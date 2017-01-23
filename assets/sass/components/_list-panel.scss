@@ -366,7 +366,7 @@ Slider
                 font-weight: bold;
                 padding: 10px;
                 font-size: 15px;
-                
+
 	        	@include from($tablet) {
 	                display: none;
 	            }
@@ -423,7 +423,7 @@ Slider
 	            top: 0;
 	            bottom: 0;
 	            width: $tab-width;
-	            height: $intro-height-L;
+                height: 100%;
 
 	            ul  {
 	                display: flex;
