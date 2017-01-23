@@ -2,6 +2,8 @@ jQuery(document).ready(function($){
 	var mainHeader = $('header .nav'),
 		headerHeight = mainHeader.height();
 
+		$('body').css('padding-top', headerHeight);
+
 	//set scrolling variables
 	var scrolling = false,
 		previousTop = 0,
