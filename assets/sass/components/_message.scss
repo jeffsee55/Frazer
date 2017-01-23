@@ -8,6 +8,11 @@
 }
 
 .block-message {
+    @include until($tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+
     & > div:first-child {
         position: relative;
 
@@ -21,6 +26,17 @@
                 top: 0;
                 background-color: $grey-dark;
             }
+        }
+    }
+}
+
+@include until($tablet) {
+    .message {
+        .message-label {
+            order: 1;
+        }
+        .message-text {
+            order: 2;
         }
     }
 }

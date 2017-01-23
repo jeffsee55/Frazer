@@ -4803,6 +4803,11 @@ a.preview-image {
   width: 0.5rem;
   background: red; }
 
+@media screen and (max-width: 768px) {
+  .block-message {
+    display: flex;
+    flex-direction: column; } }
+
 .block-message > div:first-child {
   position: relative; }
   @media screen and (min-width: 769px) {
@@ -4814,6 +4819,12 @@ a.preview-image {
       right: 0;
       top: 0;
       background-color: #4a4a4a; } }
+
+@media screen and (max-width: 768px) {
+  .message .message-label {
+    order: 1; }
+  .message .message-text {
+    order: 2; } }
 
 .message {
   max-width: 800px; }
