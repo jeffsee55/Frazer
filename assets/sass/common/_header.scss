@@ -1,7 +1,8 @@
 header {
     .nav {
         background: #FFF;
-        position: fixed;
+        // only to switch off auto-hide nav
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
