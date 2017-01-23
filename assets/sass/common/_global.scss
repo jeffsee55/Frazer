@@ -43,11 +43,15 @@ img {
 }
 
 .text-right {
-    text-align: right;
+    @include from($tablet) {
+        text-align: right;
+    }
 }
 
 .text-left {
-    text-align: left;
+    @include from($tablet) {
+        text-align: left;
+    }
 }
 
 

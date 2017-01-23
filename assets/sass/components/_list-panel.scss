@@ -11,8 +11,8 @@ $prefix-for-spec: '-webkit- ';
 
 // intro height
 
-$intro-height-S: 500px;
-$intro-height-M: 500px;
+$intro-height-S: 300px;
+$intro-height-M: 400px;
 $intro-height-L: 500px;
 
 $tab-width: 300px;
@@ -95,7 +95,8 @@ Slider
 		.cd-full-width {
 			position: absolute;
 			width: 100%;
-			height: 100%;
+			height: $intro-height-S;
+            overflow-y: scroll;
 			z-index: 1;
 			left: 0;
 			top: 0;
@@ -363,6 +364,9 @@ Slider
 	            align-items: center;
                 text-transform: uppercase;
                 font-weight: bold;
+                padding: 10px;
+                font-size: 15px;
+                
 	        	@include from($tablet) {
 	                display: none;
 	            }

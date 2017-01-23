@@ -11,14 +11,16 @@
     & > div:first-child {
         position: relative;
 
-        &:after {
-            content: "";
-            width: 5px;
-            position: absolute;
-            height: 100%;
-            right: 0;
-            top: 0;
-            background-color: $grey-dark;
+        @include from($tablet) {
+            &:after {
+                content: "";
+                width: 5px;
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                background-color: $grey-dark;
+            }
         }
     }
 }
