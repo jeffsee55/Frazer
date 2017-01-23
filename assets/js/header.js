@@ -1,8 +1,8 @@
 jQuery(document).ready(function($){
-	// var mainHeader = $('header .nav'),
-	// 	headerHeight = mainHeader.height();
-	//
-	// 	$('main').css('padding-top', headerHeight);
+	var mainHeader = $('header .nav'),
+		headerHeight = mainHeader.height();
+
+		$('main').css('padding-top', headerHeight);
 	//
 	// //set scrolling variables
 	// var scrolling = false,
