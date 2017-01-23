@@ -5,7 +5,7 @@
     left: 2rem;
     background: white;
     z-index: 1000;
-    display: none!important;
+    visibility: hidden !important;
 
     @include from($tablet) {
         position: fixed;
@@ -15,9 +15,10 @@
 
     &.show {
         @include until($tablet) {
-            display: block !important;
+            visibility: visible!important;
         }
         @include from($tablet) {
+            visibility: visible!important;
             display: flex !important;
         }
     }

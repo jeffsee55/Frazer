@@ -30,6 +30,7 @@ Slider
     border-radius: $slider-border-radius;
 	@include font-smoothing;
     margin: 1rem auto;
+    background: white;
     @include from($tablet) {
         margin: 4rem auto;
     }

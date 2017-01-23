@@ -3,40 +3,68 @@
     @if(get_row_layout() == 'image_text')
         <?php $side = get_sub_field('header_right') ? 'even' : 'odd'; ?>
         <section class="section message">
-        	<article class="level columns message-{{ $side }}">
-        		<div class="column message-label is-{{ get_sub_field('header_width') }}">
-                    <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
-                    <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
-        		</div>
-        		<div class="column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
-        			<div class="text-wrapper">
-                        {{ the_sub_field('body') }}
-        			</div>
-        		</div>
-        	</article>
+            <div class="container">
+            	<article class="level columns message-{{ $side }}">
+                    @if($side == 'even')
+                		<div class="text-right column message-label is-{{ get_sub_field('header_width') }}">
+                            <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
+                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                		</div>
+                		<div class="text-left scroll-reveal reveal-right column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
+                			<div class="text-wrapper">
+                                {{ the_sub_field('body') }}
+                			</div>
+                		</div>
+                    @else
+                		<div class="text-right scroll-reveal reveal-left column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
+                			<div class="text-wrapper">
+                                {{ the_sub_field('body') }}
+                			</div>
+                		</div>
+                		<div class="text-left column message-label is-{{ get_sub_field('header_width') }}">
+                            <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
+                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                		</div>
+                    @endif
+            	</article>
+            </div>
         </section>
     @endif
     @if(get_row_layout() == 'block_text')
         <?php $side = get_sub_field('header_right') ? 'even' : 'odd'; ?>
         <section class="section message">
         	<article class="block-message level columns message-{{ $side }}">
-        		<div class="column message-label is-{{ get_sub_field('header_width') }}">
-                    <h1>{{ the_sub_field('header') }}</h1>
-                    @if(! empty(get_sub_field('link')))
-                        <a class="button" href="{{ the_sub_field('link') }}">{{ the_sub_field('link_text') }}</a>
-                    @endif
-        		</div>
-                <div class="seperator">test</div>
-        		<div class="column block-message-text message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
-        			<div class="text-wrapper">
-                        {{ the_sub_field('body') }}
-        			</div>
-        		</div>
+                @if($side == 'even')
+            		<div class="text-right scroll-reveal reveal-right column message-label is-{{ get_sub_field('header_width') }}">
+                        <h1>{{ the_sub_field('header') }}</h1>
+                        @if(! empty(get_sub_field('link')))
+                            <a class="button" href="{{ the_sub_field('link') }}">{{ the_sub_field('link_text') }}</a>
+                        @endif
+            		</div>
+            		<div class="text-left scroll-reveal reveal-left column block-message-text message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
+            			<div class="text-wrapper">
+                            {{ the_sub_field('body') }}
+            			</div>
+            		</div>
+                @else
+            		<div class="text-right scroll-reveal reveal-right column block-message-text message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
+            			<div class="text-wrapper">
+                            {{ the_sub_field('body') }}
+            			</div>
+            		</div>
+            		<div class="text-left scroll-reveal reveal-left column message-label is-{{ get_sub_field('header_width') }}">
+                        <h1>{{ the_sub_field('header') }}</h1>
+                        @if(! empty(get_sub_field('link')))
+                            <a class="button" href="{{ the_sub_field('link') }}">{{ the_sub_field('link_text') }}</a>
+                        @endif
+            		</div>
+                @endif
         	</article>
         </section>
     @endif
     @if(get_row_layout() == 'list_panel')
-    <section>
+    <?php $image = get_sub_field('background_image') ? wp_get_attachment_url(get_sub_field('background_image'), 'large') : ''; ?>
+    <section class="section" style="background-image: url({{ $image }}); background-size: cover">
     	<section class="cd-hero vertical list-panel-slider has-shadow">
     		<ul class="cd-hero-slider">
                 <?php $i = 0; ?>
@@ -91,15 +119,15 @@
     	<section class="section preview">
             <h1 class="preview-header">{{ the_sub_field('header') }}</h1>
     		<article class="columns is-gapless">
-    			<a class="preview-image column is-5">
-    				<figure class="image-wrapper" style="background-image: url({{ the_sub_field('image') }})">
-    				</figure>
-    			</a>
-    			<div class="preview-text column is-7">
+    			<div class="preview-text column is-6">
     				<div class="text-wrapper">
     					<div class="preview-excerpt">{{ the_sub_field('body') }}</div>
     				</div>
     			</div>
+    			<a class="preview-image column is-6">
+    				<figure class="image-wrapper" style="background-image: url({{ the_sub_field('image') }})">
+    				</figure>
+    			</a>
     		</article>
     	</section>
     @endif

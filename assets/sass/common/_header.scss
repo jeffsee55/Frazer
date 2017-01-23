@@ -13,15 +13,28 @@ header {
         transition: transform .5s, -webkit-transform .5s;
 
         .mobile-logo {
-            width: 130px;
+            max-width: 130px;
             position: absolute;
             top: 1rem;
+
+            img {
+                max-height: 80px;
+                margin-left: 1rem;
+            }
 
             @include from($tablet) {
                 display: none;
             }
         }
         .desktop-logo {
+            max-width: 90px;
+            display: flex;
+            align-items: center;
+
+            a {
+                padding: 0 0 0 1rem;
+            }
+
             @include until($tablet) {
                 padding: 0 10px;
                 display: none;

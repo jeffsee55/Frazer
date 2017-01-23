@@ -1,26 +1,38 @@
+.seperator {
 
+    & > div {
+        height: 100%;
+        width: 0.5rem;
+        background: red;
+    }
+}
 
+.block-message {
     & > div:first-child {
+        position: relative;
 
-        &:before {
+        &:after {
             content: "";
-            display: block;
-            height: 100%;
-            width: 0.5rem;
-            background: $grey-dark;
+            width: 5px;
             position: absolute;
+            height: 100%;
             right: 0;
             top: 0;
+            background-color: $grey-dark;
         }
     }
-
-.seperator {
-    height: 100%;
-    width: 10px;
-    background: red;
 }
 
 .message {
+    max-width: 800px;
+
+    .message-text {
+        padding: 2rem;
+
+        .button {
+            margin-top: 2rem;
+        }
+    }
 
     p {
         margin-bottom: 0;
@@ -30,41 +42,6 @@
         img {
             display: block;
             margin: auto;
-        }
-    }
-
-    .message-even {
-        .message-label {
-            position: relative;
-
-            @include from($tablet) {
-                text-align: right;
-
-            }
-        }
-        .message-text {
-            @include from($tablet) {
-                text-align: justify;
-            }
-        }
-    }
-    .message-odd {
-        .message-label {
-            order: 3;
-            position: relative;
-            @include from($tablet) {
-                text-align: left;
-            }
-        }
-        .seperator {
-            order: 2;
-        }
-        .message-text {
-            order: 1;
-            position: relative;
-            @include from($tablet) {
-                text-align: justify;
-            }
         }
     }
 

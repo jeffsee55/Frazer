@@ -8,6 +8,11 @@ require_once( __DIR__ . '/vendor/autoload.php' );
 
 WP_Dependency_Installer::instance()->run( __DIR__ );
 
+apply_filters( 'upload_size_limit', function($size) {
+    $size = 6000;
+    return $size;
+});
+
 
 if(! function_exists('dump') ) {
     function dump($item) {

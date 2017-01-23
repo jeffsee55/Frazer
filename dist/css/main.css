@@ -3891,7 +3891,8 @@ a.panel-block:hover {
         border-bottom-color: #363636; }
 
 footer {
-  margin-bottom: 0;
+  margin-top: 10rem;
+  margin-bottom: 0 !important;
   position: absolute;
   left: 0;
   right: 0;
@@ -3958,6 +3959,12 @@ body {
 img {
   max-width: 100%; }
 
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
 .flex-wrap {
   flex-wrap: wrap; }
 
@@ -3977,8 +3984,7 @@ p {
   border-bottom: none; }
 
 .section {
-  padding: 0;
-  max-width: 970px; }
+  padding: 0; }
 
 .text-wrapper .column {
   padding: 0; }
@@ -4026,15 +4032,18 @@ h5 {
 .has-shadow {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.31); }
 
-.button.button-outline {
-  background: none;
-  border: 1px solid; }
-  .button.button-outline.inverse {
-    border-color: white;
-    color: white; }
-
-.button.button-block {
-  width: 100%; }
+.button {
+  padding: 1rem 2rem;
+  border: 2px solid gray; }
+  .button:hover {
+    background: #f7f7f7; }
+  .button.button-outline {
+    background: none; }
+    .button.button-outline.inverse {
+      border-color: white;
+      color: white; }
+  .button.button-block {
+    width: 100%; }
 
 .text-left figure {
   order: 2; }
@@ -4059,16 +4068,25 @@ header .nav {
   transition: transform .5s;
   transition: transform .5s, -webkit-transform .5s; }
   header .nav .mobile-logo {
-    width: 130px;
+    max-width: 130px;
     position: absolute;
     top: 1rem; }
+    header .nav .mobile-logo img {
+      max-height: 80px;
+      margin-left: 1rem; }
     @media screen and (min-width: 769px) {
       header .nav .mobile-logo {
         display: none; } }
-  @media screen and (max-width: 768px) {
-    header .nav .desktop-logo {
-      padding: 0 10px;
-      display: none; } }
+  header .nav .desktop-logo {
+    max-width: 90px;
+    display: flex;
+    align-items: center; }
+    header .nav .desktop-logo a {
+      padding: 0 0 0 1rem; }
+    @media screen and (max-width: 768px) {
+      header .nav .desktop-logo {
+        padding: 0 10px;
+        display: none; } }
   header .nav .custom-logo-link {
     max-width: 100px;
     padding: 1rem 1.3rem; }
@@ -4190,14 +4208,16 @@ article.single {
   line-height: 1; }
 
 .hero.is-large .hero-body {
-  padding: 4rem 0; }
+  padding: 1rem 0; }
   .hero.is-large .hero-body h1 {
-    font-size: 62.4px;
+    font-size: 150px;
     color: white;
-    letter-spacing: 10px; }
-  @media screen and (min-width: 769px) {
-    .hero.is-large .hero-body h1 {
-      font-size: 105.6px; } }
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.5); }
+  .hero.is-large .hero-body h5 {
+    text-shadow: 0 2px 9px rgba(0, 0, 0, 0.5); }
 
 .page-layout figure {
   overflow: hidden;
@@ -4266,6 +4286,7 @@ Slider
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 1rem auto;
+  background: white;
   /* --------------------------------
 
 	Single slide style
@@ -4639,7 +4660,8 @@ Slider
     max-width: 720px;
     margin-left: auto !important;
     margin-right: auto !important;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.31); }
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.31);
+    border-radius: 5px; }
   .preview .preview-excerpt {
     display: block;
     max-width: 500px;
@@ -4697,7 +4719,8 @@ a.preview-image {
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0; }
+    top: 0;
+    border-radius: 0 5px 5px 0; }
 
 .preview-text {
   position: relative;
@@ -4758,66 +4781,44 @@ a.preview-image {
     .wide img {
       max-width: 769px; } }
 
-> div:first-child:before {
-  content: "";
-  display: block;
+.seperator > div {
   height: 100%;
   width: 0.5rem;
-  background: #4a4a4a;
-  position: absolute;
-  right: 0;
-  top: 0; }
-
-.seperator {
-  height: 100%;
-  width: 10px;
   background: red; }
 
-.message p {
-  margin-bottom: 0; }
-
-@media screen and (max-width: 768px) {
-  .message img {
-    display: block;
-    margin: auto; } }
-
-.message .message-even .message-label {
+.block-message > div:first-child {
   position: relative; }
-  @media screen and (min-width: 769px) {
-    .message .message-even .message-label {
-      text-align: right; } }
+  .block-message > div:first-child:after {
+    content: "";
+    width: 5px;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #4a4a4a; }
 
-@media screen and (min-width: 769px) {
-  .message .message-even .message-text {
-    text-align: justify; } }
-
-.message .message-odd .message-label {
-  order: 3;
-  position: relative; }
-  @media screen and (min-width: 769px) {
-    .message .message-odd .message-label {
-      text-align: left; } }
-
-.message .message-odd .seperator {
-  order: 2; }
-
-.message .message-odd .message-text {
-  order: 1;
-  position: relative; }
-  @media screen and (min-width: 769px) {
-    .message .message-odd .message-text {
-      text-align: justify; } }
-
-.message > article > .column {
-  padding: 1rem; }
-  @media screen and (min-width: 769px) {
-    .message > article > .column {
-      padding: 1rem 2rem; } }
-  @media screen and (min-width: 1100px) {
-    .message > article > .column {
-      padding: 1rem 3rem; } }
-  .message > article > .column.message-label h1 {
-    text-transform: uppercase; }
+.message {
+  max-width: 800px; }
+  .message .message-text {
+    padding: 2rem; }
+    .message .message-text .button {
+      margin-top: 2rem; }
+  .message p {
+    margin-bottom: 0; }
+  @media screen and (max-width: 768px) {
+    .message img {
+      display: block;
+      margin: auto; } }
+  .message > article > .column {
+    padding: 1rem; }
+    @media screen and (min-width: 769px) {
+      .message > article > .column {
+        padding: 1rem 2rem; } }
+    @media screen and (min-width: 1100px) {
+      .message > article > .column {
+        padding: 1rem 3rem; } }
+    .message > article > .column.message-label h1 {
+      text-transform: uppercase; }
 
 .contact {
   position: absolute;
@@ -4826,7 +4827,7 @@ a.preview-image {
   left: 2rem;
   background: white;
   z-index: 1000;
-  display: none !important; }
+  visibility: hidden !important; }
   @media screen and (min-width: 769px) {
     .contact {
       position: fixed;
@@ -4834,9 +4835,10 @@ a.preview-image {
       left: 10rem; } }
   @media screen and (max-width: 768px) {
     .contact.show {
-      display: block !important; } }
+      visibility: visible !important; } }
   @media screen and (min-width: 769px) {
     .contact.show {
+      visibility: visible !important;
       display: flex !important; } }
   .contact .contact-form {
     padding: 2rem 2rem 2.5rem; }

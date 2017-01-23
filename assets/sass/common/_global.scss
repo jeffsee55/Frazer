@@ -42,6 +42,14 @@ img {
 	max-width: 100%;
 }
 
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
 
 .flex-wrap {
     flex-wrap: wrap;
@@ -68,7 +76,7 @@ p {
 
 .section {
     padding: 0;
-    max-width: 970px;
+    // max-width: 970px;
 }
 .text-wrapper .column {
     padding: 0;
@@ -129,9 +137,15 @@ h5 {
 }
 
 .button {
+    padding: 1rem 2rem;
+    border: 2px solid gray;
+
+    &:hover {
+        background: darken(white, 3);
+    }
+
     &.button-outline {
         background: none;
-        border: 1px solid;
 
         &.inverse {
             border-color: white;

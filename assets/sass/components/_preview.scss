@@ -11,6 +11,7 @@
         margin-left: auto !important;
         margin-right: auto !important;
         box-shadow: 0 3px 10px 0 rgba(0,0,0,0.31);
+        border-radius: $border-radius;
     }
 
     .preview-excerpt {
@@ -95,6 +96,7 @@ a.preview-image {
         right: 0;
         bottom: 0;
         top: 0;
+        border-radius: 0 $border-radius $border-radius 0;
     }
 }
 
