@@ -4,7 +4,7 @@
         .hero-body {
             padding: 1rem 0;
             h1 {
-                font-size: 150px;
+                font-size: 50px;
                 color: white;
                 line-height: 0.8;
                 font-weight: 900;
@@ -18,7 +18,7 @@
 
             @include from($tablet) {
                 h1 {
-                    // font-size: $size-large;
+                    font-size: 150px;
                 }
             }
         }
