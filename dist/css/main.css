@@ -4210,7 +4210,7 @@ article.single {
 .hero.is-large .hero-body {
   padding: 1rem 0; }
   .hero.is-large .hero-body h1 {
-    font-size: 150px;
+    font-size: 50px;
     color: white;
     line-height: 0.8;
     font-weight: 900;
@@ -4218,6 +4218,9 @@ article.single {
     text-shadow: 0 2px 9px rgba(0, 0, 0, 0.5); }
   .hero.is-large .hero-body h5 {
     text-shadow: 0 2px 9px rgba(0, 0, 0, 0.5); }
+  @media screen and (min-width: 769px) {
+    .hero.is-large .hero-body h1 {
+      font-size: 150px; } }
 
 .page-layout figure {
   overflow: hidden;
