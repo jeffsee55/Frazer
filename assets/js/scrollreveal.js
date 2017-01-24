@@ -42,4 +42,5 @@ sr.reveal('.reveal-bottom', {
     viewFactor: 0.5,
     distance: '50px',
     duration: 1500,
-}, 75);
+    delay: 200,
+}, 100);
