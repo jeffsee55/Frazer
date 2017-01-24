@@ -95,7 +95,6 @@ Slider
 		.cd-full-width {
 			position: absolute;
 			width: 100%;
-			height: $intro-height-S;
             overflow-y: scroll;
 			z-index: 1;
 			left: 0;
@@ -104,7 +103,7 @@ Slider
 	        flex-direction: column;
 	        align-items: flex-start;
 	        justify-content: flex-start;
-            padding: 4rem 2rem 1rem;
+            padding: 2rem;
 
 			/* Force Hardware Acceleration in WebKit */
 			@include backface-visibility(hidden);
@@ -210,10 +209,7 @@ Slider
 		text-align: center;
 		height: 100px;
 		background-color: white;
-
-        @include from($tablet) {
-            border-radius: $slider-border-radius;
-        }
+        border-radius: $slider-border-radius;
 
 		nav, ul, li, a {
 			height: 100%;
@@ -321,6 +317,13 @@ Slider
 			display: inline-block;
             width: 33.33333%;
 			float: left;
+            &:first-child {
+                border-radius: 0 0 0 $slider-border-radius;
+            }
+
+            &:last-child {
+                border-radius: 0 0 $slider-border-radius 0;
+            }
 
             @include from($tablet) {
                 &:first-child {

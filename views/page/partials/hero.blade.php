@@ -4,11 +4,11 @@
         <?php $side = get_sub_field('header_right') ? 'even' : 'odd'; ?>
         <section class="section message">
             <div class="container">
-            	<article class="level columns message-{{ $side }}">
+            	<article class="level columns image-message message-{{ $side }}">
                     @if($side == 'even')
                 		<div class="text-right column message-label is-{{ get_sub_field('header_width') }}">
                             <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
-                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'thumbnail')[0] }}">
                 		</div>
                 		<div class="text-left scroll-reveal reveal-right column message-text is-{{ 12 - intval(get_sub_field('header_width')) }}">
                 			<div class="text-wrapper">
@@ -23,7 +23,7 @@
                 		</div>
                 		<div class="text-left column message-label is-{{ get_sub_field('header_width') }}">
                             <?php $revealSide = $side == 'odd' ? 'reveal-right' : 'reveal-left'; ?>
-                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'original')[0] }}">
+                            <img class="scroll-reveal {{ $revealSide }} reveal-rotate" src="{{ wp_get_attachment_image_src( get_sub_field('header'), 'thumbnail')[0] }}">
                 		</div>
                     @endif
             	</article>

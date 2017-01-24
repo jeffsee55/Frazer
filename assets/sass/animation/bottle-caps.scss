@@ -1,0 +1,22 @@
+.reveal-rotate:hover {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform: rotateZ(0);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: rotateZ(1deg);
+  }
+
+  20%, 80% {
+    transform: rotateZ(-1deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotateZ(1deg);
+  }
+
+  40%, 60% {
+    transform: rotateZ(-1deg);
+  }
+}
