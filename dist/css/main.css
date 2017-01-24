@@ -5085,6 +5085,11 @@ Slider
     color: white;
     width: 90%;
     max-width: 720px; }
+    .hero-slider.cd-hero .cd-hero-slider .text-wrapper h2 {
+      margin-bottom: 2rem; }
+    .hero-slider.cd-hero .cd-hero-slider .text-wrapper ul, .hero-slider.cd-hero .cd-hero-slider .text-wrapper ol {
+      list-style: square;
+      padding-left: 20px; }
   @media only screen and (min-width: 768px) {
     .hero-slider.cd-hero .cd-hero-slider li:nth-of-type(2) {
       background-image: none; }
