@@ -32,6 +32,10 @@
 
 
 .image-message {
+    img {
+        max-width: 150px;
+    }
+
     @include until($tablet) {
         display: flex;
         flex-direction: column;

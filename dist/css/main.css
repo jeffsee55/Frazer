@@ -4832,6 +4832,9 @@ a.preview-image {
       top: 0;
       background-color: #4a4a4a; } }
 
+.image-message img {
+  max-width: 150px; }
+
 @media screen and (max-width: 768px) {
   .image-message {
     display: flex;
