@@ -65,6 +65,7 @@
 
     & > article > .column {
         padding: 1rem;
+        white-space: normal;
 
         @include from($tablet) {
             padding: 1rem 2rem;

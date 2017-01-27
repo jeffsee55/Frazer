@@ -20,9 +20,9 @@
                     <textarea class="textarea" name="message"></textarea>
                 </p>
             </div>
-            <button type="submit" id="contact-submit" class="contact-submit button"><i class="fa fa-send"></i></button>
+            <button type="submit" id="contact-submit" class="contact-submit button" style="background-color: {{ get_field('fff_contact_color', 'option') ? the_field('fff_contact_color', 'option') : '#da4242' }}"><i class="fa fa-send"></i></button>
         </div>
-        <div class="contact-info column is-5">
+        <div class="contact-info column is-5" style="background-color: {{ get_field('fff_contact_color', 'option') ? the_field('fff_contact_color', 'option') : '#da4242' }}">
             <div>
                 <h4>Contact Info</h4>
                 <hr>

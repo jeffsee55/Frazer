@@ -6,10 +6,16 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 gulp.task('sass', function () {
   return gulp.src('./assets/sass/main.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))   
     .pipe(gulp.dest('./dist/css'));
 });
 

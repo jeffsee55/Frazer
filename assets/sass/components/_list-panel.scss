@@ -95,20 +95,24 @@ Slider
 		.cd-full-width {
 			position: absolute;
 			width: 100%;
-			height: $intro-height-S;
+			height: 100%;
             overflow-y: scroll;
 			z-index: 1;
 			left: 0;
 			top: 0;
 	        display: flex;
-	        flex-direction: column;
-	        align-items: flex-start;
+	        // flex-direction: column;
+	        align-items: center;
 	        justify-content: flex-start;
-            padding: 4rem 2rem 1rem;
+            padding: 3rem 2rem 1rem;
 
 			/* Force Hardware Acceleration in WebKit */
 			@include backface-visibility(hidden);
 			@include transform(translateZ(0));
+
+            .text-wrapper {
+                padding-bottom: 2rem;
+            }
 		}
 
 	    h2 {
@@ -322,6 +326,7 @@ Slider
             width: 33.33333%;
 			float: left;
 
+
             @include from($tablet) {
                 &:first-child {
                     border-radius: $slider-border-radius 0 0 0;
@@ -435,6 +440,9 @@ Slider
 	                    flex: 1;
                         height: auto;
                         width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
 	                    a {
                             align-items: center;
