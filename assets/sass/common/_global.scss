@@ -1,7 +1,11 @@
 body {
     font-family: $family-sans-serif;
-    font-size: $size-5;
     color: $grey-dark;
+    font-size: $size-6;
+
+    @include from($tablet) {
+        font-size: $size-5;
+    }
 
     // bulma doesn't drill down for its tag class
     // so the body for tag archives gets this class added
@@ -90,9 +94,6 @@ section.section {
     margin: 4rem 0;
     padding: 1rem;
     @include from($tablet) {
-        margin: 4rem 2rem;
-    }
-    @include from($desktop) {
         margin: 4rem auto;
     }
 }
@@ -112,23 +113,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: $size-1;
-}
-
-h2 {
     font-size: $size-2;
 }
 
-h3 {
+h2 {
     font-size: $size-3;
 }
 
-h4 {
+h3 {
     font-size: $size-4;
 }
 
-h5 {
-    font-size: $size-5;
+@include from($tablet) {
+
+    h1 {
+        font-size: $size-1;
+    }
+
+    h2 {
+        font-size: $size-2;
+    }
+
+    h3 {
+        font-size: $size-3;
+    }
+
+    h4 {
+        font-size: $size-4;
+    }
+
+    h5 {
+        font-size: $size-5;
+    }
+
 }
 
 .title {

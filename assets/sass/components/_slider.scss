@@ -163,6 +163,15 @@ Slider
 			color: white;
 			width: 90%;
 			max-width: 720px;
+
+			h2 {
+				margin-bottom: 2rem;
+			}
+
+			ul, ol {
+				list-style: square;
+			    padding-left: 20px;
+			}
 		}
 
 		@include MQ(M) {

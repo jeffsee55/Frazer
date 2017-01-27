@@ -214,10 +214,7 @@ Slider
 		text-align: center;
 		height: 100px;
 		background-color: white;
-
-        @include from($tablet) {
-            border-radius: $slider-border-radius;
-        }
+        border-radius: $slider-border-radius;
 
 		nav, ul, li, a {
 			height: 100%;
@@ -325,6 +322,13 @@ Slider
 			display: inline-block;
             width: 33.33333%;
 			float: left;
+            &:first-child {
+                border-radius: 0 0 0 $slider-border-radius;
+            }
+
+            &:last-child {
+                border-radius: 0 0 $slider-border-radius 0;
+            }
 
 
             @include from($tablet) {

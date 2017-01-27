@@ -48,7 +48,7 @@
                         $i++;
                         ?>
     					<li class="scroll-reveal reveal-bottom {{ $selected }}">
-                            <a style="background-image: url({{ the_sub_field('icon') }})" href="#0">
+                            <a style="background-image: url({{ wp_get_attachment_image_src( get_sub_field('icon'), 'thumbnail')[0] }})" href="#0">
 								<div class="slide-nav-title">{{ the_sub_field('title') }}</div>
 							</a>
                         </li>

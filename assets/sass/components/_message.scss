@@ -6,11 +6,11 @@
         background: red;
     }
 }
-
 .block-message {
     @include until($tablet) {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     & > div:first-child {
@@ -27,6 +27,19 @@
                 background-color: $grey-dark;
             }
         }
+    }
+}
+
+
+.image-message {
+    img {
+        max-width: 150px;
+    }
+
+    @include until($tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

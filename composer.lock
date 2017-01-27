@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ed975465f65dcff8e8734f28ac43e47c",
     "content-hash": "bc546ec6a7e9f3aeae25aee2919fc01e",
     "packages": [
         {
@@ -49,7 +48,7 @@
                 }
             ],
             "description": "Library that helps WordPress plugin dependency management.",
-            "time": "2016-11-13 17:58:03"
+            "time": "2016-11-13T17:58:03+00:00"
         },
         {
             "name": "collizo4sky/persist-admin-notices-dismissal",
@@ -79,7 +78,7 @@
                 }
             ],
             "description": "Simple library to persist dismissal of admin notices across pages in WordPress dashboard.",
-            "time": "2016-11-04 17:11:49"
+            "time": "2016-11-04T17:11:49+00:00"
         },
         {
             "name": "composer/installers",
@@ -186,7 +185,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "illuminate/container",
@@ -227,7 +226,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2015-01-29 16:04:27"
+            "time": "2015-01-29T16:04:27+00:00"
         },
         {
             "name": "illuminate/events",
@@ -270,7 +269,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-10-02 19:49:50"
+            "time": "2014-10-02T19:49:50+00:00"
         },
         {
             "name": "illuminate/filesystem",
@@ -313,7 +312,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2014-12-29 18:11:33"
+            "time": "2014-12-29T18:11:33+00:00"
         },
         {
             "name": "illuminate/support",
@@ -361,7 +360,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2015-01-27 20:51:43"
+            "time": "2015-01-27T20:51:43+00:00"
         },
         {
             "name": "illuminate/view",
@@ -406,7 +405,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
-            "time": "2015-01-27 20:51:43"
+            "time": "2015-01-27T20:51:43+00:00"
         },
         {
             "name": "symfony/finder",
@@ -453,7 +452,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-03 08:01:13"
+            "time": "2015-01-03T08:01:13+00:00"
         },
         {
             "name": "windwalker/data",
@@ -497,7 +496,7 @@
                 "framework",
                 "windwalker"
             ],
-            "time": "2016-02-12 15:36:22"
+            "time": "2016-02-12T15:36:22+00:00"
         },
         {
             "name": "windwalker/registry",
@@ -546,7 +545,7 @@
                 "windwalker"
             ],
             "abandoned": "windwalker/structure",
-            "time": "2016-03-07 10:02:08"
+            "time": "2016-03-07T10:02:08+00:00"
         },
         {
             "name": "windwalker/renderer",
@@ -604,7 +603,7 @@
                 "renderer",
                 "windwalker"
             ],
-            "time": "2016-02-12 15:36:22"
+            "time": "2016-02-12T15:36:22+00:00"
         }
     ],
     "packages-dev": [
@@ -646,7 +645,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2017-01-19 14:23:36"
+            "time": "2017-01-19T14:23:36+00:00"
         },
         {
             "name": "phpmd/phpmd",
@@ -712,7 +711,7 @@
                 "phpmd",
                 "pmd"
             ],
-            "time": "2017-01-20 14:41:10"
+            "time": "2017-01-20T14:41:10+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -790,7 +789,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30 04:02:31"
+            "time": "2016-11-30T04:02:31+00:00"
         },
         {
             "name": "symfony/config",
@@ -846,7 +845,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-02T20:32:22+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -909,7 +908,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-10 14:21:25"
+            "time": "2017-01-10T14:21:25+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -958,7 +957,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08 20:47:33"
+            "time": "2017-01-08T20:47:33+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -994,7 +993,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2016-08-29 20:04:47"
+            "time": "2016-08-29T20:04:47+00:00"
         }
     ],
     "aliases": [],
