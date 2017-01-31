@@ -44,7 +44,7 @@ class Mailer {
     public function sendContact()
     {
         $to = 'jeffsee.55@gmail.com';
-        $subject = 'Message from ' . get_bloginfo('name');
+        $subject = 'Message from ' . str_replace("''", "", get_bloginfo('name'));
 		$message = $this->buildMessage('alert', $_POST);
         $headers = [
             'Content-Type: text/html; charset=UTF-8'
@@ -52,7 +52,7 @@ class Mailer {
         wp_mail( $to, $subject, $message, $headers, $attachments = array() );
 
         $to = $_POST['email'];
-        $subject = get_bloginfo('name');
+        $subject = str_replace("''", "", get_bloginfo('name'));
 		$message = $this->buildMessage('notice', $_POST);
         $headers = [
             'Content-Type: text/html; charset=UTF-8'
