@@ -6,6 +6,7 @@ sr.reveal('.reveal-right.reveal-rotate', {
     distance: '60px',
     duration: 1500,
     rotate: { x: 0, y: 0, z: 20 },
+    mobile: false
 });
 
 sr.reveal('.reveal-right', {
@@ -13,6 +14,7 @@ sr.reveal('.reveal-right', {
     viewFactor: 0.8,
     distance: '40px',
     duration: 1500,
+    mobile: false
 });
 
 sr.reveal('.reveal-left.reveal-rotate', {
@@ -21,6 +23,7 @@ sr.reveal('.reveal-left.reveal-rotate', {
     distance: '60px',
     duration: 1500,
     rotate: { x: 0, y: 0, z: -20 },
+    mobile: false
 });
 
 sr.reveal('.reveal-left', {
@@ -28,6 +31,7 @@ sr.reveal('.reveal-left', {
     viewFactor: 0.8,
     distance: '50px',
     duration: 1500,
+    mobile: false
 });
 
 sr.reveal('.reveal-center', {

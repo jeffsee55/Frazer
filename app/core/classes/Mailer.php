@@ -24,17 +24,17 @@ class Mailer {
         add_action('wp_ajax_nopriv_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_send_contact', [$this, 'sendContact']);
         add_filter( 'wp_mail_from', function() {
-            return 'info@example.com';
+            return 'info@' get_site_url() ;
         } );
     }
 
     public function registerSMTP($phpmailer) {
-        // $phpmailer->isSMTP();
-        // $phpmailer->Host = 'mailtrap.io';
-        // $phpmailer->SMTPAuth = true;
-        // $phpmailer->Port = 2525;
-        // $phpmailer->Username = '8661db25c9b5dd';
-        // $phpmailer->Password = 'dde285839762da';
+        $phpmailer->isSMTP();
+        $phpmailer->Host = 'mailtrap.io';
+        $phpmailer->SMTPAuth = true;
+        $phpmailer->Port = 2525;
+        $phpmailer->Username = '8661db25c9b5dd';
+        $phpmailer->Password = 'dde285839762da';
         $phpmailer->From = "info@frazerfinerfoods.com";
         $phpmailer->FromName = "Contact";
     }
