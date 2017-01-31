@@ -18,7 +18,7 @@ class Mailer {
 	 * Admin constructor.
 	 */
 	public function __construct() {
-        add_action('phpmailer_init',   [$this, 'registerSMTP']);
+        // add_action('phpmailer_init',   [$this, 'registerSMTP']);
         add_action('admin_post_nopriv_send_contact', [$this, 'sendContact']);
         add_action('admin_post_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_nopriv_send_contact', [$this, 'sendContact']);
