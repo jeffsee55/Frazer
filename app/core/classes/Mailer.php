@@ -18,13 +18,15 @@ class Mailer {
 	 * Admin constructor.
 	 */
 	public function __construct() {
+		// $host = parse_url(get_site_url())['host'];
+		// dd('info@' . $host);
         add_action('phpmailer_init',   [$this, 'registerSMTP']);
         add_action('admin_post_nopriv_send_contact', [$this, 'sendContact']);
         add_action('admin_post_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_nopriv_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_send_contact', [$this, 'sendContact']);
         add_filter( 'wp_mail_from', function() {
-            return 'info@' . get_site_url() ;
+            return 'info@frazersfinerfoods.com';
         } );
     }
 
