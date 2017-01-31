@@ -24,7 +24,7 @@ class Mailer {
         add_action('wp_ajax_nopriv_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_send_contact', [$this, 'sendContact']);
         add_filter( 'wp_mail_from', function() {
-            return 'info@' get_site_url() ;
+            return 'info@' . get_site_url() ;
         } );
     }
 
