@@ -29,6 +29,8 @@ class Mailer {
     }
 
     public function registerSMTP($phpmailer) {
+        $phpmailer->From = "info@frazerfinerfoods.com";
+        $phpmailer->FromName = "Frazers Finer Foods";
 		$environment = get_field('fff_environment', 'option');
 		if($environment == 'staging')
 		{
@@ -38,18 +40,6 @@ class Mailer {
 	        $phpmailer->Port = 2525;
 	        $phpmailer->Username = '8661db25c9b5dd';
 	        $phpmailer->Password = 'dde285839762da';
-	        $phpmailer->From = "info@frazerfinerfoods.com";
-	        $phpmailer->FromName = "Contact";
-		} else {
-	        $phpmailer->isSMTP();
-			$phpmailer->SMTPAuth = true;
-	        $phpmailer->Host = 'smtp-relay.gmail.com';
-	        $phpmailer->SMTPAuth = true;
-	        $phpmailer->Port = 465;
-	        $phpmailer->Username = get_field('smtp_username', 'option');
-	        $phpmailer->Password = get_field('smtp_password', 'option');
-	        $phpmailer->From = "info@frazerfinerfoods.com";
-	        $phpmailer->FromName = "Contact";
 		}
     }
 
