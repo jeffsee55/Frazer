@@ -18,7 +18,7 @@ class Mailer {
 	 * Admin constructor.
 	 */
 	public function __construct() {
-        add_action('phpmailer_init',   [$this, 'registerSMTP']);
+        // add_action('phpmailer_init',   [$this, 'registerSMTP']);
         add_action('admin_post_nopriv_send_contact', [$this, 'sendContact']);
         add_action('admin_post_send_contact', [$this, 'sendContact']);
         add_action('wp_ajax_nopriv_send_contact', [$this, 'sendContact']);
@@ -29,14 +29,28 @@ class Mailer {
     }
 
     public function registerSMTP($phpmailer) {
-        $phpmailer->isSMTP();
-        $phpmailer->Host = 'mailtrap.io';
-        $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = 2525;
-        $phpmailer->Username = '8661db25c9b5dd';
-        $phpmailer->Password = 'dde285839762da';
-        $phpmailer->From = "info@frazerfinerfoods.com";
-        $phpmailer->FromName = "Contact";
+		$environment = get_field('fff_environment', 'option');
+		if($environment == 'staging')
+		{
+	        $phpmailer->isSMTP();
+	        $phpmailer->Host = 'mailtrap.io';
+	        $phpmailer->SMTPAuth = true;
+	        $phpmailer->Port = 2525;
+	        $phpmailer->Username = '8661db25c9b5dd';
+	        $phpmailer->Password = 'dde285839762da';
+	        $phpmailer->From = "info@frazerfinerfoods.com";
+	        $phpmailer->FromName = "Contact";
+		} else {
+	        $phpmailer->isSMTP();
+			$phpmailer->SMTPAuth = true;
+	        $phpmailer->Host = 'smtp-relay.gmail.com';
+	        $phpmailer->SMTPAuth = true;
+	        $phpmailer->Port = 465;
+	        $phpmailer->Username = get_field('smtp_username', 'option');
+	        $phpmailer->Password = get_field('smtp_password', 'option');
+	        $phpmailer->From = "info@frazerfinerfoods.com";
+	        $phpmailer->FromName = "Contact";
+		}
     }
 
     public function sendContact()
