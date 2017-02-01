@@ -294,12 +294,12 @@
           <div class="content">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader">New message from - <?= $data['name']; ?></span>
+            <span class="preheader">New message</span>
             <div class="header">
               <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                      <h1>Frazer Finer Foods & Co</h1>
+                      <h1><?= bloginfo('name') ?></h1>
                   </td>
                 </tr>
               </table>
