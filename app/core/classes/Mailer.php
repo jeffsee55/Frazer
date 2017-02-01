@@ -45,7 +45,7 @@ class Mailer {
 
     public function sendContact()
     {
-		$siteName = str_replace("'", "", bloginfo('name'));
+		$siteName = str_replace("'", "", get_bloginfo('name'));
         // $to = get_field('fff_send_emails_to', 'option');
         $to = 'jeffsee.55@gmail.com';
 		$subject = 'Message from ' . $siteName;
