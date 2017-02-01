@@ -96,7 +96,7 @@
               <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;">
                 <tr>
                   <td class="content-block" style="font-family:sans-serif;font-size:14px;vertical-align:top;color:#999999;font-size:12px;text-align:center;">
-                    <h1 style="color:#000000;font-family:sans-serif;font-weight:400;line-height:1.4;margin:0;Margin-bottom:30px;font-size:35px;font-weight:300;text-align:center;text-transform:capitalize;font-weight:bold;text-transform:uppercase;">Frazer Finer Foods & Co</h1>
+                    <h1 style="color:#000000;font-family:sans-serif;font-weight:400;line-height:1.4;margin:0;Margin-bottom:30px;font-size:35px;font-weight:300;text-align:center;text-transform:capitalize;font-weight:bold;text-transform:uppercase;"><?= bloginfo('name') ?></h1>
                   </td>
                 </tr>
               </table>
@@ -112,7 +112,7 @@
                         <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><strong>Email: </strong><?= $data['name']; ?></p>
                         <hr style="border:0;border-bottom:1px solid #f6f6f6;Margin:20px 0;">
                         <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><?= $data['message']; ?></p>
-                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Frazer Finer Foods & Co</p>
+                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><?= bloginfo('name') ?></p>
                       </td>
                     </tr>
                   </table>
