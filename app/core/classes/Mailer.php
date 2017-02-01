@@ -30,7 +30,7 @@ class Mailer {
 
     public function registerSMTP($phpmailer) {
         $phpmailer->From = "info@frazerfinerfoods.com";
-        $phpmailer->FromName = "Frazers Finer Foods";
+        $phpmailer->FromName = preg_replace('/(\'|&#0*39;)/', '', get_bloginfo('name'));
 		$environment = get_field('fff_environment', 'option');
 		if($environment == 'staging')
 		{
@@ -45,7 +45,7 @@ class Mailer {
 
     public function sendContact()
     {
-		$siteName = str_replace("'", "", get_bloginfo('name'));
+		$siteName = preg_replace('/(\'|&#0*39;)/', '', get_bloginfo('name'));
         // $to = get_field('fff_send_emails_to', 'option');
         $to = 'jeffsee.55@gmail.com';
 		$subject = 'Message from ' . $siteName;
