@@ -46,8 +46,8 @@ class Mailer {
     public function sendContact()
     {
 		$siteName = preg_replace('/(\'|&#0*39;)/', '', get_bloginfo('name'));
-        // $to = get_field('fff_send_emails_to', 'option');
-        $to = 'jeffsee.55@gmail.com';
+        $to = get_field('fff_send_emails_to', 'option');
+        // $to = 'jeffsee.55@gmail.com';
 		$subject = 'Message from ' . $siteName;
 		$message = $this->buildMessage('alert', $_POST);
         $headers = [
